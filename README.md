@@ -20,11 +20,6 @@ Desenvolver um site de planejamento de estudos online que ajude estudantes a org
 ## Tecnologias Utilizadas
 - HTML  
 - Bootstrap  
-## Estrutura do Projeto
-- `index.html` → Dashboard  
-- `login.html` → Página de login  
-- `cadastro.html` → Página de cadastro  
-- `tarefas.html` → Lista de tarefas  
 ## Integrantes
 - Rosa Beatriz  
 - Raianny  

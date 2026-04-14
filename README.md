@@ -19,7 +19,8 @@ Desenvolver um site de planejamento de estudos online que ajude estudantes a org
 - Dashboard com resumo de atividades  
 ## Tecnologias Utilizadas
 - HTML  
-- Bootstrap  
+- Bootstrap
+- JS 
 ## Integrantes
 - Rosa Beatriz  
 - Raianny  

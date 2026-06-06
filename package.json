@@ -1,0 +1,28 @@
+{
+  "name": "planner",
+  "version": "1.0.0",
+  "description": "Sistema web desenvolvido para auxiliar estudantes na organização e planejamento dos estudos.\r ## Objetivo Geral\r Desenvolver um site de planejamento de estudos online que ajude estudantes a organizar sua rotina, melhorar a produtividade e acompanhar seu desempenho acadêmico.\r ## Objetivos Específicos\r - Criar e organizar cronogramas de estudo  \r - Gerenciar tarefas com prazos e prioridades  \r - Acompanhar o progresso dos estudos  \r - Organizar atividades por matérias  \r - Visualizar metas semanais  \r - Exibir lembretes importantes  \r - Disponibilizar um painel com resumo das atividades  \r ## Funcionalidades\r - Cadastro de usuário  \r - Login de usuário  \r - Criação de tarefas  \r - Listagem de tarefas  \r - Visualização de progresso  \r - Dashboard com resumo de atividades  \r ## Tecnologias Utilizadas\r - HTML  \r - Bootstrap\r - JS \r ## Integrantes\r - Rosa Beatriz  \r - Raianny  \r - Michelly  \r - Thamyres",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosabz/ancoradosaber.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rosabz/ancoradosaber/issues"
+  },
+  "homepage": "https://github.com/rosabz/ancoradosaber#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.3"
+  }
+}

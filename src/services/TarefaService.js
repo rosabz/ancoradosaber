@@ -87,7 +87,7 @@ class TarefaService {
       );
     }
 
-    // Impede que o usuário troque a tarefa para outro usuário
+    
     delete dados.usuarioId;
 
     return await this.repository.atualizar(id, dados);

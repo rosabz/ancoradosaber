@@ -14,8 +14,7 @@ class DisciplinaService {
       throw new Error("O nome da disciplina deve ter pelo menos 2 caracteres.");
     }
 
-    // Verifica se já existe uma disciplina com o mesmo nome
-    // para o mesmo usuário
+  
     const disciplinas = await this.repository.listarTodos();
 
     const duplicada = disciplinas.find(

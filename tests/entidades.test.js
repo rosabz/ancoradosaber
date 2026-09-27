@@ -32,9 +32,7 @@ describe("Testes das entidades da API", () => {
     await sequelize.close();
   });
 
-  // =========================
-  // DISCIPLINA
-  // =========================
+
 
   test("Deve criar uma disciplina", async () => {
     const nomeDisciplina = `Matemática Jest ${Date.now()}`;
@@ -77,9 +75,7 @@ describe("Testes das entidades da API", () => {
     expect(segundaResposta.statusCode).toBe(400);
   });
 
-  // =========================
-  // TAREFA
-  // =========================
+
 
   test("Deve criar uma tarefa", async () => {
     const resposta = await request(app)
@@ -119,9 +115,7 @@ describe("Testes das entidades da API", () => {
     expect(resposta.statusCode).toBe(404);
   });
 
-  // =========================
-  // META
-  // =========================
+
 
   test("Deve criar uma meta", async () => {
     const resposta = await request(app)
@@ -151,9 +145,7 @@ describe("Testes das entidades da API", () => {
     expect(resposta.statusCode).toBe(400);
   });
 
-  // =========================
-  // LEMBRETE
-  // =========================
+
 
   test("Deve criar um lembrete", async () => {
     const resposta = await request(app)
@@ -183,9 +175,7 @@ describe("Testes das entidades da API", () => {
     expect(resposta.statusCode).toBe(400);
   });
 
-  // =========================
-  // REGISTRO DE ESTUDO
-  // =========================
+
 
   test("Deve criar um registro de estudo", async () => {
     const resposta = await request(app)
@@ -217,9 +207,7 @@ describe("Testes das entidades da API", () => {
     expect(resposta.statusCode).toBe(400);
   });
 
-  // =========================
-  // BUSCAS
-  // =========================
+
 
   test("Deve buscar a tarefa criada", async () => {
     const resposta = await request(app)

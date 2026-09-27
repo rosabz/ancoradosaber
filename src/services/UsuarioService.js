@@ -6,7 +6,7 @@ class UsuarioService {
     this.repository = new UsuarioRepository();
   }
 
-  // Remove a senha antes de enviar o usuário para a API
+  
   removerSenha(usuario) {
     if (!usuario) {
       return null;
@@ -20,27 +20,27 @@ class UsuarioService {
   }
 
   async criar(dados) {
-    // Validação dos campos obrigatórios
+   
     if (!dados.nome || !dados.email || !dados.senha) {
       throw new Error("Nome, email e senha são obrigatórios.");
     }
 
-    // Validação do nome
+   
     if (dados.nome.trim().length < 3) {
       throw new Error("O nome deve ter pelo menos 3 caracteres.");
     }
 
-    // Validação do email
+    
     if (!dados.email.includes("@")) {
       throw new Error("Informe um email válido.");
     }
 
-    // Validação da senha
+    
     if (dados.senha.length < 6) {
       throw new Error("A senha deve ter pelo menos 6 caracteres.");
     }
 
-    // Regra: não permitir email duplicado
+    
     const usuarioExistente = await this.repository.buscarPorEmail(
       dados.email
     );
@@ -49,7 +49,7 @@ class UsuarioService {
       throw new Error("Email já cadastrado.");
     }
 
-    // Criptografa a senha antes de salvar
+   
     const senhaHash = await bcrypt.hash(dados.senha, 10);
 
     const usuario = await this.repository.criar({
@@ -88,7 +88,7 @@ class UsuarioService {
       throw new Error("Informe um email válido.");
     }
 
-    // Se estiver alterando a senha, criptografa antes de salvar
+   
     if (dados.senha) {
       if (dados.senha.length < 6) {
         throw new Error("A senha deve ter pelo menos 6 caracteres.");

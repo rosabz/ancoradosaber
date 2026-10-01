@@ -6,16 +6,19 @@ class RegistroEstudoController {
   }
 
   async criar(req, res) {
-    try {
-      const registro = await this.service.criar(req.body);
+  try {
+    const registro = await this.service.criar({
+      ...req.body,
+      usuarioId: req.usuario.id,
+    });
 
-      res.status(201).json(registro);
-    } catch (error) {
-      res.status(400).json({
-        erro: error.message,
-      });
-    }
+    res.status(201).json(registro);
+  } catch (error) {
+    res.status(400).json({
+      erro: error.message,
+    });
   }
+}
 
   async listarTodos(req, res) {
     try {

@@ -7,6 +7,14 @@ describe("Testes da API de Usuários", () => {
   let usuarioId;
 
   beforeAll(async () => {
+    // Cria o usuário que será usado nos testes
+    await request(app).post("/usuarios").send({
+      nome: "Usuario Login Teste",
+      email: "teste.login@email.com",
+      senha: "123456",
+    });
+
+    // Faz login para obter o token
     const resposta = await request(app).post("/login").send({
       email: "teste.login@email.com",
       senha: "123456",

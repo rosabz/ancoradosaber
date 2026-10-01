@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/usuarios", autenticarToken, usuarioRoutes);
+app.use("/usuarios", usuarioRoutes);
 app.use("/disciplinas", autenticarToken, disciplinaRoutes);
 app.use("/tarefas", autenticarToken, tarefaRoutes);
 app.use("/metas", autenticarToken, metaRoutes);

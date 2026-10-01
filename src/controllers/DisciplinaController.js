@@ -6,17 +6,19 @@ class DisciplinaController {
   }
 
   async criar(req, res) {
-    try {
-      const disciplina = await this.service.criar(req.body);
+  try {
+    const disciplina = await this.service.criar({
+      ...req.body,
+      usuarioId: req.usuario.id,
+    });
 
-      res.status(201).json(disciplina);
-    } catch (error) {
-      res.status(400).json({
-        erro: error.message,
-      });
-    }
+    res.status(201).json(disciplina);
+  } catch (error) {
+    res.status(400).json({
+      erro: error.message,
+    });
   }
-
+}
   async listarTodos(req, res) {
     try {
       const disciplinas = await this.service.listarTodos();

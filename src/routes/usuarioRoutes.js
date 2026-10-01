@@ -1,5 +1,6 @@
 const express = require("express");
 const UsuarioController = require("../controllers/UsuarioController");
+const autenticarToken = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 const controller = new UsuarioController();
@@ -11,8 +12,6 @@ const controller = new UsuarioController();
  *     summary: Cria um novo usuário
  *     tags:
  *       - Usuários
- *     security:
- *       - bearerAuth: []
  *     requestBody:
  *       required: true
  *       content:
@@ -54,7 +53,7 @@ router.post("/", (req, res) => controller.criar(req, res));
  *       200:
  *         description: Lista de usuários
  */
-router.get("/", (req, res) => controller.listarTodos(req, res));
+router.get("/", autenticarToken, (req, res) => controller.listarTodos(req, res));
 
 /**
  * @swagger
@@ -78,7 +77,7 @@ router.get("/", (req, res) => controller.listarTodos(req, res));
  *       404:
  *         description: Usuário não encontrado
  */
-router.get("/:id", (req, res) => controller.buscarPorId(req, res));
+router.get("/:id", autenticarToken, (req, res) => controller.buscarPorId(req, res));
 
 /**
  * @swagger
@@ -118,7 +117,7 @@ router.get("/:id", (req, res) => controller.buscarPorId(req, res));
  *       404:
  *         description: Usuário não encontrado
  */
-router.put("/:id", (req, res) => controller.atualizar(req, res));
+router.put("/:id", autenticarToken, (req, res) => controller.atualizar(req, res));
 
 /**
  * @swagger
@@ -142,6 +141,6 @@ router.put("/:id", (req, res) => controller.atualizar(req, res));
  *       404:
  *         description: Usuário não encontrado
  */
-router.delete("/:id", (req, res) => controller.excluir(req, res));
+router.put("/:id", autenticarToken, (req, res) => controller.atualizar(req, res));
 
 module.exports = router;
